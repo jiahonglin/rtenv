@@ -673,9 +673,14 @@ void show_task_info(int argc, char* argv[])
 			write(fdout, &task_info_status , 2);
 		write_blank(5);
 		write(fdout, &task_info_priority , 3);
-
 		write(fdout, &next_line , 3);
 	}
+}
+
+void print(char *word)
+{
+    int fdout = mq_open("/tmp/mqueue/out", 0);
+    write(fdout, word, strlen(word)+1);
 }
 
 //this function helps to show int
