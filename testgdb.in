@@ -1,0 +1,3 @@
+source qemudbg_init.in
+set logging on
+echo debug debug debug\n
