@@ -98,6 +98,9 @@ check: unit_test.c unit_test.h
 	$(CROSS_COMPILE)gdb -batch -x test-strcmp.in
 	@mv -f gdb.txt test-strcmp.txt
 	@echo
+	$(CROSS_COMPILE)gdb -batch -x test-strlen.in
+	@mv -f gdb.txt test-strlen.txt
+	@echo
 	@pkill -9 $(notdir $(QEMU_STM32))
 
 clean:
