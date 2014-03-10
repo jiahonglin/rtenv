@@ -6,7 +6,11 @@
 #include <stddef.h>
 
 void *memcpy(void *dest, const void *src, size_t n);
-
+void *malloc(size_t size)
+{
+    static char m[1024] = {0};
+    return m;
+}
 int strcmp(const char *a, const char *b) __attribute__ ((naked));
 int strcmp(const char *a, const char *b)
 {
