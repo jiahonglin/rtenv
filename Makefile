@@ -95,8 +95,8 @@ check: unit_test.c unit_test.h
 		-serial stdio \
 		-kernel main.bin -monitor null >/dev/null &
 	@echo
-	$(CROSS_COMPILE)gdb -batch -x testgdb.in
-	@mv -f gdb.txt testgdb.txt
+	$(CROSS_COMPILE)gdb -batch -x test-strcmp.in
+	@mv -f gdb.txt test-strcmp.txt
 	@echo
 	@pkill -9 $(notdir $(QEMU_STM32))
 
